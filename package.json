@@ -10,6 +10,7 @@
         "Other"
     ],
     "activationEvents": [
+        "onView:fileExplorer",
         "onCommand:extension.forevolve.gitext.browse"
     ],
     "main": "./out/extension",
@@ -19,7 +20,15 @@
                 "command": "extension.forevolve.gitext.browse",
                 "title": "Browse with Git Extensions"
             }
-        ]
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.forevolve.gitext.browse",
+                    "group": "extension.forevolve.gitext"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
