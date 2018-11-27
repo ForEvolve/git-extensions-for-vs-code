@@ -1,7 +1,7 @@
 {
     "name": "git-extensions-for-vs-code",
     "displayName": "Git Extensions for VS Code",
-    "description": "Provide a command to browse the current project with GitExtensions.",
+    "description": "Provide a command to browse the current project using GitExtensions, from the Explorer.",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.29.0"
