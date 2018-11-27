@@ -23,6 +23,6 @@ There are no known issues.
 
 ## Release Notes
 
-### 0.0.1
+### 1.0.0
 
 The initial release of _Git Extensions for VS Code_, it contributes the `Browse with Git Extensions` command to the explorer's context menu.

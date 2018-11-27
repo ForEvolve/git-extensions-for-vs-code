@@ -2,12 +2,29 @@
     "name": "git-extensions-for-vs-code",
     "displayName": "Git Extensions for VS Code",
     "description": "Provide a command to browse the current project using GitExtensions, from the Explorer.",
-    "version": "0.0.1",
+    "version": "1.0.0",
+    "icon": "iamges/Logo-256x256.png",
+    "publisher": "forevolve",
+    "author": {
+        "name": "Carl-Hugo Marcotte"
+    },
+    "galleryBanner": {
+        "color": "#C80000",
+        "theme": "dark"
+    },
     "engines": {
         "vscode": "^1.29.0"
     },
     "categories": [
-        "Other"
+        "Other",
+        "SCM Providers"
+    ],
+    "keywords": [
+        "Git",
+        "GitExt",
+        "GitExtensions",
+        "Git Extensions",
+        "Extensions"
     ],
     "activationEvents": [
         "onView:fileExplorer",
@@ -43,5 +60,13 @@
         "tslint": "^5.8.0",
         "@types/node": "^8.10.25",
         "@types/mocha": "^2.2.42"
-    }
+    },
+    "bugs": {
+        "url": "https://github.com/ForEvolve/git-extensions-for-vs-code/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ForEvolve/git-extensions-for-vs-code.git"
+    },
+    "homepage": "https://github.com/ForEvolve/git-extensions-for-vs-code/blob/master/README.md"
 }
