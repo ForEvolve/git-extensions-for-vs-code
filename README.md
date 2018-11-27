@@ -26,3 +26,7 @@ There are no known issues.
 ### 1.0.0
 
 The initial release of _Git Extensions for VS Code_, it contributes the `Browse with Git Extensions` command to the explorer's context menu.
+
+### 1.0.1
+
+Update the `vscode` dependency to `^1.1.22` to remove the `event-stream` vulnerability.
