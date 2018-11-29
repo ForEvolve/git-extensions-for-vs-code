@@ -23,10 +23,21 @@ There are no known issues.
 
 ## Release Notes
 
-### 1.0.0
+### 1.1.0
 
-The initial release of _Git Extensions for VS Code_, it contributes the `Browse with Git Extensions` command to the explorer's context menu.
+#### Explorer context menu
+
+-   Added support for workspace; the right-clicked context menu item is now taken into consideration, opening GitExt based on that file or directory.
+-   Moved the `Browse with Git Extensions` option up, right under the navigation section.
+
+#### Editor context menu
+
+-   Added the `Browse with Git Extensions` command to the context menu of the editor, allowing to open GitExt from an opened file.
 
 ### 1.0.1
 
 Update the `vscode` dependency to `^1.1.22` to remove the `event-stream` vulnerability.
+
+### 1.0.0
+
+The initial release of _Git Extensions for VS Code_, it contributes the `Browse with Git Extensions` command to the explorer's context menu.

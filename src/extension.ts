@@ -5,17 +5,37 @@ import * as vscode from 'vscode';
 import * as cp from 'child_process';
 
 export function activate(context: vscode.ExtensionContext) {
-    let disposable = vscode.commands.registerCommand('extension.forevolve.gitext.browse', async () => {
-        // Display a message box to the user
-        vscode.window.showInformationMessage('Opening GitExtensions...');
+    let disposable = vscode.commands.registerCommand('extension.forevolve.gitext.browse', async (uri: vscode.Uri) => {
+        // Getting the current right-clicked file, defaulting to the root workspace directory
+        let workspaceRoot: string = uri.fsPath || vscode.workspace.rootPath || '';
+        const usedDefault = uri && uri.fsPath ? false : true;
 
-        // Launching Git Extensions
-        let workspaceRoot = vscode.workspace.rootPath;
-        let emptyTasks: vscode.Task[] = [];
+        // Logging some debug info no matter what
+        console.log(`extension.forevolve.gitext.browse based on: ${workspaceRoot} | Used default: ${usedDefault}`);
+
+        // If there is nothing to launch, return
+        const emptyTasks: vscode.Task[] = [];
         if (!workspaceRoot) {
             return emptyTasks;
         }
-        let { stdout, stderr } = await exec('gitextensions browse', { cwd: workspaceRoot });
+
+        // If its a file, strip the filename; gitext is expecting a directory
+        if (uri.scheme === 'file') {
+            const indexWin = workspaceRoot.lastIndexOf('\\');
+            const indexOthers = workspaceRoot.lastIndexOf('//');
+            const index = Math.max(indexWin, indexOthers);
+            workspaceRoot = workspaceRoot.substr(0, index);
+            console.log(`extension.forevolve.gitext.browse extracted directory: ${workspaceRoot}`);
+        }
+
+        // Displaying a message box to the user
+        const message = usedDefault
+            ? 'Opening GitExtensions based on the workspace root.'
+            : `Opening GitExtensions based on: ${workspaceRoot}`;
+        vscode.window.showInformationMessage(message);
+
+        // Launching Git Extensions
+        const { stdout, stderr } = await exec('gitextensions browse', { cwd: workspaceRoot });
 
         // Display error
         if (stderr && stderr.length > 0) {
