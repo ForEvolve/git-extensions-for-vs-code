@@ -23,6 +23,10 @@ There are no known issues.
 
 ## Release Notes
 
+### 1.1.1
+
+-   Update the `vscode` dependency to `^1.1.33` to remove a `tar` vulnerability; see [CVE-2018-20834](https://nvd.nist.gov/vuln/detail/CVE-2018-20834).
+
 ### 1.1.0
 
 #### Explorer context menu
