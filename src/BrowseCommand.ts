@@ -6,6 +6,7 @@ export class BrowseCommand {
         // Getting the current right-clicked file, defaulting to the root workspace directory
         const result = this.findUserSelectionPath(uri);
 
+        // If there is nothing to launch, return
         const emptyTasks: vscode.Task[] = [];
         if (!result) {
             return emptyTasks;
@@ -17,7 +18,7 @@ export class BrowseCommand {
             : `Opening GitExtensions based on: ${result.userSelectionPath}`;
         vscode.window.showInformationMessage(message);
 
-        // Launching Git Extensions
+        // Launch Git Extensions
         const { stdout, stderr } = await exec('gitextensions browse', { cwd: result.userSelectionPath });
 
         // Display error
