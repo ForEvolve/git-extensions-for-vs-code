@@ -2,7 +2,7 @@
     "name": "git-extensions-for-vs-code",
     "displayName": "Git Extensions for VS Code",
     "description": "Provide a command to browse the current project using GitExtensions, from the Explorer.",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "icon": "images/Logo-256x256.png",
     "publisher": "forevolve",
     "author": {
