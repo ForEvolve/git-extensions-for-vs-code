@@ -13,6 +13,8 @@ steps:
 
     - bash: |
           npm install -g vsce
-          vsce publish -p $(deployPAT)
+          vsce publish -p $DEPLOY_PAT
       displayName: 'Publish to the marketplace'
-      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['Build.SourceBranch'], 'refs/heads/fix-deploy')))
+      env:
+        DEPLOY_PAT: $(deployPAT)
