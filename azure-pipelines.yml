@@ -1,6 +1,7 @@
 resources:
     - repo: self
-queue:
+
+pool:
     name: Hosted VS2017
     demands: npm
 
@@ -14,3 +15,4 @@ steps:
           npm install -g vsce
           vsce publish -p $(deployPAT)
       displayName: 'Publish to the marketplace'
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
