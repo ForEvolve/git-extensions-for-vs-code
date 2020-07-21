@@ -49,6 +49,7 @@ There are no settings at this point.
 
 -   Update packages
 -   Update README
+-   Update build definition
 -   Fix [WS-2019-0310](https://github.com/TooTallNate/node-https-proxy-agent/commit/36d8cf509f877fa44f4404fce57ebaf9410fe51b)
 -   Fix [CVE-2020-7598](https://github.com/advisories/GHSA-vh95-rmgr-6w4m)
 
